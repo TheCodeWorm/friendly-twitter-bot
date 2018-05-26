@@ -7,3 +7,5 @@ var T = new Twit({
 })
 
 var users = [" ... ", " ... ", " ... "];
+
+var stream = T.stream('statuses/filter', {follow: users});
