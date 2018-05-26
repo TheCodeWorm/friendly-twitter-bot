@@ -5,3 +5,5 @@ var T = new Twit({
     access_token:         ' ... ',
     access_token_secret:  ' ... ',
 })
+
+var users = [" ... ", " ... ", " ... "];
