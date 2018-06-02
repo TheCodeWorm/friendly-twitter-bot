@@ -1,4 +1,4 @@
-var Twit = require('twit')
+var Twit = require('twit');
 var T = new Twit({
     consumer_key:         ' ... ',
     consumer_secret:      ' ... ',

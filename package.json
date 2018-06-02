@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/TheCodeWorm/friendly-twitter-bot#readme",
   "dependencies": {
+    "requirejs": "^2.3.5",
     "twit": "^2.2.10"
   }
 }
