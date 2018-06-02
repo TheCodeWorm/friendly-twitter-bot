@@ -1,17 +1,19 @@
-
-console.log("testing.....");
-
-fetch('../credentials.json').then(function(res) {
-		console.log(res.json.text();  // convert to text
+var Twit = require('twit')
+var T = new Twit({
+    consumer_key:         ' ... ',
+    consumer_secret:      ' ... ',
+    access_token:         ' ... ',
+    access_token_secret:  ' ... ',
 })
 
-/*
 fetch('../credentials.json')
-	.then(console.log(response))
-	*/
- /*
-   .then(response => response.json())
-  .then(jsonResponse => console.log(jsonResponse))
-  
- */
-  
+	.then(res => res.json())
+	.then(data => {
+		var T = new Twit({
+    consumer_key:         data.consumer_key,
+    consumer_secret:      data.consumer_secret,
+    access_token:         data.access_token,
+    access_token_secret:  data.access_token_secret
+    })
+  console.log("testing: ", data.consumer_secret);
+})
