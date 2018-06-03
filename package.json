@@ -1,8 +1,12 @@
 {
   "name": "friendly-twitter-bot",
   "version": "1.0.0",
-  "description": "Bojo is the name of this twitter bot.",
-  "main": "index.js",
+  "description": "nodejs twitter bot",
+  "main": "app.js",
+  "dependencies": {
+    "twitter": "^1.7.1"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,9 +19,5 @@
   "bugs": {
     "url": "https://github.com/TheCodeWorm/friendly-twitter-bot/issues"
   },
-  "homepage": "https://github.com/TheCodeWorm/friendly-twitter-bot#readme",
-  "dependencies": {
-    "requirejs": "^2.3.5",
-    "twit": "^2.2.10"
-  }
+  "homepage": "https://github.com/TheCodeWorm/friendly-twitter-bot#readme"
 }
