@@ -6,8 +6,8 @@ var T = new Twitter(config);
 
 // Set up your search parameters
 var params = {
-  q: '#javascript',
-  count: 10,
+  q: '#100daysofcode',
+  count: 100,
   result_type: 'recent',
   lang: 'en'
 }
@@ -40,7 +40,7 @@ T.get('search/tweets', params, function(err, data, response) {
 	      	console.log("following: ", data.statuses[i].retweeted_status.user.following);
       		console.log("not follwing and they are following  more people than they have as followers");
 
-      		/*
+      		
       		console.log("Ready to create friendship:");
       		T.post('friendships/create', {
       			screen_name: screenName
@@ -52,7 +52,7 @@ T.get('search/tweets', params, function(err, data, response) {
 						  console.log("follow created!")
 						}
 					});
-					*/
+					
 
       		console.log("Ready to Like post:")
 					T.post('favorites/create', id, function(err, response) { 
