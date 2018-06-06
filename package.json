@@ -4,6 +4,7 @@
   "description": "nodejs twitter bot",
   "main": "app.js",
   "dependencies": {
+    "mongoose": "^5.1.4",
     "twitter": "^1.7.1"
   },
   "devDependencies": {},

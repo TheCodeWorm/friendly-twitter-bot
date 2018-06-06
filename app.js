@@ -13,7 +13,7 @@ if (!process.argv[2]) {
 // clean out following list
 else if (process.argv[2] === "clean") {
 	let next_cursor = -1;
-	let getData = function(next_cursor) {
+	const getData = function(next_cursor) {
 		let T = new Twitter(config);
 	  T.get('friends/list', {
 	  screen_name: 'The_Code_Worm', cursor: next_cursor
@@ -122,4 +122,5 @@ function addTo() {
 		});
 	}
 }
+
 
