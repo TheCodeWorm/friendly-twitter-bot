@@ -7,7 +7,7 @@ let count_follows = 0;
 
 // command line arg passed 
 if (!process.argv[2]) {
-	addTo()
+	addTo();
 }
 
 // clean out following list
@@ -18,6 +18,7 @@ else if (process.argv[2] === "clean") {
 	  T.get('friends/list', {
 	  screen_name: 'The_Code_Worm', cursor: next_cursor
 		}, (err, data, response) => {
+			let count = 0;
 		  if (err) {
 		    console.log(err)
 		  } 
@@ -27,10 +28,11 @@ else if (process.argv[2] === "clean") {
 			    console.log(data.users[i].screen_name);
 			    //console.log(data.user.following)
 		  	}
-		  	;
-				if(next_cursor != 0) { 
+		  	
+				if(next_cursor != 0 && count < 3) { 
 					getData(next_cursor = data['next_cursor']);
 				}
+				count++;
 			}
 		});
 	}
