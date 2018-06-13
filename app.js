@@ -41,7 +41,7 @@ else if (process.argv[2] === "clean") {
 
 function addTo() {
 	// array for searches
-	const searchArr = ['#100daysofcode', '#javascript', '#nodejs', '#301daysofcode', '#30days30sites', '#codenewbie'];
+	const searchArr = ['#100daysofcode', '#javascript', '#nodejs', '#301daysofcode', '#30days30sites', '#codenewbie', '#GirlsWhoCode', 'momswhocode' ];
 
 	for (let i = 0; i < searchArr.length; i++) {
 		let T = new Twitter(config);
@@ -49,7 +49,7 @@ function addTo() {
 		// Set up your search parameters
 		const params = {
 		  q: searchArr[i],
-		  count: 10,
+		  count: 15,
 		  result_type: 'recent',
 		  lang: 'en'
 		}
@@ -73,23 +73,25 @@ function addTo() {
 		      	following = data.statuses[i].retweeted_status.user.friends_count;
 		      	followingBool = data.statuses[i].retweeted_status.user.following;
 		      	screenName = data.statuses[i].retweeted_status.user.screen_name;
+		      	
 		      }
 		      else {
 		      	followers = data.statuses[i].user.followers_count;
 		      	following = data.statuses[i].user.friends_count;
 		      	followingBool = data.statuses[i].user.following;
 		      	screenName = data.statuses[i].user.screen_name;
+		      	
 		      }
 
 		      if (followingBool === false && following > followers) {
 		      	//console.log("created: ", data.statuses[i].retweeted_status.created_at);
-		      	
 		      	console.log("screen_name: ", screenName);
 		      	//console.log("description: ", data.statuses[i].retweeted_status.user.description);
 		      	//console.log("friends_count: ", data.statuses[i].retweeted_status.user.friends_count);
 		      	//console.log("followers_count: ", data.statuses[i].retweeted_status.user.followers_count);
 		      	//console.log("following: ", data.statuses[i].retweeted_status.user.following);
 	      		//console.log("not follwing and they are following  more people than they have as followers");
+	      		
 	      		
 	      		//console.log("Ready to create friendship:");
 	      		T.post('friendships/create', {
@@ -118,6 +120,7 @@ function addTo() {
 			          console.log('Favorited: ', count_likes, `https://twitter.com/${username}/status/${tweetId}`)
 			        }
 	      		});
+	      		
 					}
 		    }
 		  } 
