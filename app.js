@@ -5,25 +5,25 @@ const config = require('./config.js');
 let count_likes = 0;
 let count_follows = 0;
 
-/*
+
 const mysql      = require('mysql');
 const connection = mysql.createConnection({
   host     : 'example.org',
   user     : 'bob',
   password : 'secret'
 });
+console.log(connection)
  
 connection.connect(function(err) {
   if (err) {
     console.error('error connecting: ' + err.stack);
     return;
   }
-  console.log("testing..");
   console.log('connected as id ' + connection.threadId);
 });
 
 connection.destroy();
-*/
+
 
 // command line arg passed 
 if (!process.argv[2]) {
