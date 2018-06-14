@@ -5,6 +5,26 @@ const config = require('./config.js');
 let count_likes = 0;
 let count_follows = 0;
 
+/*
+const mysql      = require('mysql');
+const connection = mysql.createConnection({
+  host     : 'example.org',
+  user     : 'bob',
+  password : 'secret'
+});
+ 
+connection.connect(function(err) {
+  if (err) {
+    console.error('error connecting: ' + err.stack);
+    return;
+  }
+  console.log("testing..");
+  console.log('connected as id ' + connection.threadId);
+});
+
+connection.destroy();
+*/
+
 // command line arg passed 
 if (!process.argv[2]) {
 	addTo();
@@ -92,7 +112,7 @@ function addTo() {
 		      	//console.log("following: ", data.statuses[i].retweeted_status.user.following);
 	      		//console.log("not follwing and they are following  more people than they have as followers");
 	      		
-	      		
+	      		/*
 	      		//console.log("Ready to create friendship:");
 	      		T.post('friendships/create', {
 	      			screen_name: screenName
@@ -120,7 +140,7 @@ function addTo() {
 			          console.log('Favorited: ', count_likes, `https://twitter.com/${username}/status/${tweetId}`)
 			        }
 	      		});
-	      		
+	      		*/
 					}
 		    }
 		  } 
